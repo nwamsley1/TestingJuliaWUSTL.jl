@@ -28,4 +28,13 @@ using Test
     @test (issubset(Interval(1, 10), Interval(-10, 100))) == true
     @test (issubset(Interval(-10, 100), Interval(1, 10))) == false
     @test (issubset(Interval(10, 100), Interval(10, 100))) == true
+
+    #Tests for part5
+    @test (intersection(Interval(1, 10), Interval(-10, 100))) == Interval(1, 10)
+    @test (intersection(Interval(-10, 100), Interval(1, 10))) == Interval(1, 10)
+    @test (intersection(Interval(10, 100), Interval(10, 100))) == Interval(1, 100)
+    @test (intersection(Interval(-10, 100), Interval(10, 200))) == Interval(10, 100)
+    @test (intersection(Interval(10, 200), Interval(-10, 100))) == Interval(10, 100)
+    
+
 end

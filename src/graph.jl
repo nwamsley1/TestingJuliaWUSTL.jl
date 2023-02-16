@@ -40,4 +40,4 @@ function getComponent(graph, node)
     component
 end
 
- export getComponent
+export getComponent

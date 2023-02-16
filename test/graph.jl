@@ -28,6 +28,7 @@ using Test
                                 [7],
                                 [6]
                             ]
+    
     #Tests for 1)
     @test Set(getNeighbors(undirected_graph, 1)) == Set([1, 2, 3])
     @test Set(getNeighbors(undirected_graph, 4)) == Set([4, 5])
@@ -47,4 +48,13 @@ using Test
     @test getComponent(multicomponent_graph, 5) == Set([1, 2, 3, 4, 5, 6, 7])
     @test getComponent(multicomponent_graph, 6) == Set([6, 7])
     @test getComponent(multicomponent_graph, 7) == Set([6, 7])
+
+    #Test for 3)
+    #This gets tricky with directed graphs. In the example, it is not
+    #possible to reach 5 starting from any other node. But it is possible to 
+    #reach all other nodes starting from 5. So the components overlap. 
+    @test getAllComponents(multicomponent_graph) == [Set([1, 2, 3, 4]),
+                                                     Set([1, 2, 3, 4, 5]),
+                                                     Set([5, 6, 7]),
+                                                     Set([6, 7])]
 end

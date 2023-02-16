@@ -28,6 +28,15 @@ using Test
                                 [7],
                                 [6]
                             ]
+    multicomponent_graph_adj = [
+                                1 1 1 0 0 0 0;
+                                1 1 0 1 0 0 0;
+                                1 0 1 1 0 0 0;
+                                0 1 1 1 0 0 0;
+                                0 0 0 1 1 1 1;
+                                0 0 0 0 0 1 1;
+                                0 0 0 0 0 1 1;
+                               ]
     
     #Tests for 1)
     @test Set(getNeighbors(undirected_graph, 1)) == Set([1, 2, 3])
@@ -54,6 +63,13 @@ using Test
     #possible to reach 5 starting from any other node. But it is possible to 
     #reach all other nodes starting from 5. So the components overlap. 
     @test getAllComponents(multicomponent_graph) == Set([Set([1, 2, 3, 4]),
+                                                     Set([1, 2, 3, 4, 5, 6, 7]),
+                                                     #Set([5, 6, 7]), this line was in error
+                                                     Set([6, 7])])
+
+    #Test for 4)
+    #Test for 3 but for adjacency matrix version
+    @test getAllComponents(multicomponent_graph_adj) == Set([Set([1, 2, 3, 4]),
                                                      Set([1, 2, 3, 4, 5, 6, 7]),
                                                      #Set([5, 6, 7]), this line was in error
                                                      Set([6, 7])])

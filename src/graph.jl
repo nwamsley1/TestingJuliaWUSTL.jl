@@ -2,6 +2,10 @@ function getNeighbors(graph, node)
     append!([node], graph[node])
 end
 
+function getNeighbors(graph::Matrix, node)
+    findall(x -> x == 1, A[:,1])
+end
+
 export getNeighbors
 
 function getComponent(graph, node)
@@ -43,10 +47,10 @@ end
 export getComponent
 
 function getAllComponents(graph)
-    #This is very ineficient. 
+    #This is ineficient. But it wokrs. 
     components = Set{Set{Int64}}()
     for node in eachindex(graph)
-        component =  getComponent(graph, node)
+        component = getComponent(graph, node)
         println("node ", node)
         println("component ", component)
         if component in components continue

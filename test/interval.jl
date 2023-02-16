@@ -23,4 +23,9 @@ using Test
     @test (isempty(custom_interval_c)) == true
     @test (isempty(custom_interval_a)) == false
     @test (isempty(custom_interval_b)) == false
+
+    #Tests for part4
+    @test (issubset(Interval(1, 10), Interval(-10, 100))) == true
+    @test (issubset(Interval(-10, 100), Interval(1, 10))) == false
+    @test (issubset(Interval(10, 100), Interval(10, 100))) == true
 end

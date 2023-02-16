@@ -1,5 +1,6 @@
 module TestingJuliaWUSTL
 
-# Write your package code here.
+export getNeighbors
 include("graph.jl")
+# Write your package code here.
 end

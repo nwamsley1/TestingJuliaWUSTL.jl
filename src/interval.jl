@@ -15,4 +15,9 @@ function ∈(N::Number, iv::Interval)
     end
 end
 
+import Base.isempty
+function isempty(iv::Interval)
+    minimum(iv)==maximum(iv) ? true : false
+end
+
 export Interval

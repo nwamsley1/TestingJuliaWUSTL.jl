@@ -31,5 +31,9 @@ function isempty(iv::Interval)
     minimum(iv)==maximum(iv) ? true : false
 end
 
+import Base.issubset
+function issubset(ivl::Interval, ivr::Interval)
+    minimum(ivl)>=minimum(ivr) && maximum(ivl)<=maximum(ivr) ? true : false
+end
 
 export Interval

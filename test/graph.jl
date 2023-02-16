@@ -53,8 +53,8 @@ using Test
     #This gets tricky with directed graphs. In the example, it is not
     #possible to reach 5 starting from any other node. But it is possible to 
     #reach all other nodes starting from 5. So the components overlap. 
-    @test getAllComponents(multicomponent_graph) == [Set([1, 2, 3, 4]),
-                                                     Set([1, 2, 3, 4, 5]),
-                                                     Set([5, 6, 7]),
-                                                     Set([6, 7])]
+    @test getAllComponents(multicomponent_graph) == Set([Set([1, 2, 3, 4]),
+                                                     Set([1, 2, 3, 4, 5, 6, 7]),
+                                                     #Set([5, 6, 7]), this line was in error
+                                                     Set([6, 7])])
 end

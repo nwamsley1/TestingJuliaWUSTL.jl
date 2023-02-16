@@ -41,3 +41,19 @@ function getComponent(graph, node)
 end
 
 export getComponent
+
+function getAllComponents(graph)
+    #This is very ineficient. 
+    components = Set{Set{Int64}}()
+    for node in eachindex(graph)
+        component =  getComponent(graph, node)
+        println("node ", node)
+        println("component ", component)
+        if component in components continue
+        else push!(components, component) 
+        end
+    end
+    components
+end
+
+export getAllComponents

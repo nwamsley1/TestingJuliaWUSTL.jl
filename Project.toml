@@ -1,0 +1,13 @@
+name = "TestingJuliaWUSTL"
+uuid = "6b81d6a5-990f-43dd-a5d1-e08005bc0d7f"
+authors = ["nwamsley1 <n.t.wamsley@wustl.edu> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

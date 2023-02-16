@@ -30,11 +30,12 @@ using Test
     @test (issubset(Interval(10, 100), Interval(10, 100))) == true
 
     #Tests for part5
-    @test (intersection(Interval(1, 10), Interval(-10, 100))) == Interval(1, 10)
-    @test (intersection(Interval(-10, 100), Interval(1, 10))) == Interval(1, 10)
-    @test (intersection(Interval(10, 100), Interval(10, 100))) == Interval(1, 100)
-    @test (intersection(Interval(-10, 100), Interval(10, 200))) == Interval(10, 100)
-    @test (intersection(Interval(10, 200), Interval(-10, 100))) == Interval(10, 100)
-    
+    @test Interval(1, 10)∩Interval(-10, 100) == Interval(1, 10)
+    @test Interval(-10, 100)∩Interval(1, 10) == Interval(1, 10)
+    @test Interval(-10, 100)∩Interval(1, 100) == Interval(1, 100)
+    @test Interval(-10, 10)∩Interval(0, 20) == Interval(0, 10)
+    @test Interval(0, 20)∩Interval(-10, 10) == Interval(0, 10)
+    @test Interval(1000, 2000)∩Interval(-10, 100) == nothing
+
 
 end

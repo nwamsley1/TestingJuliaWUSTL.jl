@@ -40,11 +40,11 @@ using Test
     # Write your tests here.
 
     #Tests for 2)
-    @test getComponent(multicomponent_graph, 1) = Set([1, 2, 3, 4, 5])
-    @test getComponent(multicomponent_graph, 2) = Set([1, 2, 3, 4, 5])
-    @test getComponent(multicomponent_graph, 3) = Set([1, 2, 3, 4, 5])
-    @test getComponent(multicomponent_graph, 4) = Set([1, 2, 3, 4, 5])
-    @test getComponent(multicomponent_graph, 5) = Set([1, 2, 3, 4, 5, 6, 7])
-    @test getComponent(multicomponent_graph, 6) = Set([6, 7])
-    @test getComponent(multicomponent_graph, 7) = Set([6, 7])
+    @test getComponent(multicomponent_graph, 1) == Set([1, 2, 3, 4])
+    @test getComponent(multicomponent_graph, 2) == Set([1, 2, 3, 4])
+    @test getComponent(multicomponent_graph, 3) == Set([1, 2, 3, 4 ])
+    @test getComponent(multicomponent_graph, 4) == Set([1, 2, 3, 4])
+    @test getComponent(multicomponent_graph, 5) == Set([1, 2, 3, 4, 5, 6, 7])
+    @test getComponent(multicomponent_graph, 6) == Set([6, 7])
+    @test getComponent(multicomponent_graph, 7) == Set([6, 7])
 end

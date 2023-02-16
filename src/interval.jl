@@ -65,4 +65,7 @@ function ∩(ivl::Interval, ivr::Interval)
             )
 end
 
+import Base.show
+f#unction show(iv::Interval)
+ #   print("")
 export Interval

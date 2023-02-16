@@ -37,5 +37,9 @@ using Test
     @test Interval(0, 20)∩Interval(-10, 10) == Interval(0, 10)
     @test Interval(1000, 2000)∩Interval(-10, 100) == nothing
 
+    #Tests for part6
+    @test print(Interval(0, 10)) == print("\u301a0,10\u301b")
+    @test print(Interval(0, 0)) == print("\u2205")
+
 
 end

@@ -36,5 +36,33 @@ function issubset(ivl::Interval, ivr::Interval)
     minimum(ivl)>=minimum(ivr) && maximum(ivl)<=maximum(ivr) ? true : false
 end
 
+import Base.∩
+import Base.length
+
+#import Base.iterate
+function length(iv::Interval)
+    maximum(iv) - minimum(iv)
+end
+
+#function iterate(iv::Interval)
+#    zip((iv.lower, iv.upper))
+#end
+
+function ∩(ivl::Interval, ivr::Interval)
+    print(ivl.lower)
+    if (minimum(ivr) > maximum(ivl)) || (minimum(ivl) > maximum(ivr))
+        return nothing
+    end
+    Interval(
+            maximum(
+                        (minimum(ivr), 
+                        minimum(ivl))
+                    ),
+            minimum(
+                (maximum(ivr), 
+                maximum(ivl))
+            )
+            )
+end
 
 export Interval

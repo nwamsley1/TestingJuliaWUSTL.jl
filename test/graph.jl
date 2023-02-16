@@ -69,6 +69,10 @@ using Test
 
     #Test for 4)
     #Test for 3 but for adjacency matrix version
+    #Should have put these in earlier. 
+    @test Set(getNeighbors(multicomponent_graph_adj, 1)) == Set([1, 2, 3])
+    @test Set(getNeighbors(multicomponent_graph_adj, 5)) == Set([4, 5, 6, 7])
+
     @test getAllComponents(multicomponent_graph_adj) == Set([Set([1, 2, 3, 4]),
                                                      Set([1, 2, 3, 4, 5, 6, 7]),
                                                      #Set([5, 6, 7]), this line was in error

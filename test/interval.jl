@@ -1,6 +1,7 @@
 using TestingJuliaWUSTL
 using Test
 @testset "interval.jl" begin
+    #Tests for part1
     custom_interval_a = Interval(1, 63)
     custom_interval_b = Interval(1.0, 62.56)
 
@@ -8,4 +9,12 @@ using Test
     @test maximum(custom_interval_a) == 63
     @test minimum(custom_interval_b) == 1.0
     @test maximum(custom_interval_b) == 62.56
+    #Tests for part 2
+    @test 10 in custom_interval_a == true
+    @test 10.0 in custom_interval_a == true
+    @test 100.0 in custom_interval_a == false
+    
+    @test 10 in custom_interval_b == true
+    @test 10.0 in custom_interval_b == true
+    @test 100.0 in custom_interval_b == false
 end

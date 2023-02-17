@@ -38,8 +38,6 @@ end
 
 import Base.∩
 import Base.length
-
-#import Base.iterate
 function length(iv::Interval)
     maximum(iv) - minimum(iv)
 end
@@ -66,6 +64,12 @@ function ∩(ivl::Interval, ivr::Interval)
 end
 
 import Base.show
-f#unction show(iv::Interval)
+function show(io::IO, iv::Interval)
+    if length(iv) == 0
+        print(io, "\u2205")
+    else
+        print(io, "\u301a",iv.lower,",",iv.upper,"\u301b")
+    end
+end
  #   print("")
 export Interval

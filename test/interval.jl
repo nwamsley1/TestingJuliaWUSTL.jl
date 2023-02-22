@@ -44,7 +44,13 @@ using Test
     print(io, Interval(0, 10))
     pretty_interval = String(take!(io))
     @test pretty_interval == "\u301a0,10\u301b"
-    @test pretty_interval != print("\u301a1,10\u301b")
+    @test pretty_interval != "\u301a1,10\u301b"
+
+    io = IOBuffer();
+    print(io, Interval(10, 10))
+    empty_interval = String(take!(io))
+    @test empty_interval == "\u2205"
+    println(Interval(10, 10))
     #@test @capture_out show(Interval(0, 0)) == "\u2205"
 
 

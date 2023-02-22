@@ -36,11 +36,16 @@ using Test
     @test Interval(-10, 10)∩Interval(0, 20) == Interval(0, 10)
     @test Interval(0, 20)∩Interval(-10, 10) == Interval(0, 10)
     @test Interval(1000, 2000)∩Interval(-10, 100) == nothing
-
+    println("hwllow")
+    println("hellow")
+    println(Interval(2, 3))
     #Tests for part6
-    using Suppressor
-    @test @capture_out show(Interval(0, 10)) == "\u301a0,10\u301b"
-    @test @capture_out show(Interval(0, 0)) == "\u2205"
+    io = IOBuffer();
+    print(io, Interval(0, 10))
+    pretty_interval = String(take!(io))
+    @test pretty_interval == "\u301a0,10\u301b"
+    @test pretty_interval != print("\u301a1,10\u301b")
+    #@test @capture_out show(Interval(0, 0)) == "\u2205"
 
 
 end

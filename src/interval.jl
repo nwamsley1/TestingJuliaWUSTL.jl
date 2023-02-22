@@ -1,16 +1,15 @@
 struct Interval
     lower::Number
     upper::Number
-end
-
-#Constructor for interval type
-function Interval(l::Number, r::Number)
-    if l<r 
-        lower = l
-        upper = r
-    else
-        lower = r
-        upper = l
+    function Interval(l::Number, r::Number)
+        if l<r 
+            lower = l
+            upper = r
+        else
+            lower = r
+            upper = l
+        end
+        return new(lower, upper)
     end
 end
 
@@ -38,8 +37,12 @@ end
 
 import Base.∩
 import Base.length
+
+
+
+
 function length(iv::Interval)
-    maximum(iv) - minimum(iv)
+    return (maximum(iv) - minimum(iv))
 end
 
 #function iterate(iv::Interval)
